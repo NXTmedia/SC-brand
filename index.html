@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stationers' Brand Guide</title>
+<meta name="description" content="Brand guidelines for The Stationers' Company: logo, typography, colour and tone of voice, with the Stationers' Hall sub-brand.">
+<link rel="icon" type="image/svg+xml" href="assets/logo-primary.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Website palette (stationers.org) */
+    --blue:#2962e7;          /* Blue: accent, links, eyebrows */
+    --navy:#0f2546;          /* Dark blue: headings, wordmark */
+    --navy-2:#0a1b3c;
+    --slate:#3b5479;
+    --light-blue:#75869e;    /* secondary text */
+    --pale-blue:#a7c8fa;
+    --yellow:#f7d252;
+    --dark-yellow:#e9bb2b;
+    --light-brown:#a89571;   /* logo device, primary buttons */
+    --brown:#9f7d58;
+    --dark-brown:#641f17;
+    --ink:#141414;
+    --grey:#a1a4a9;
+    --light-grey:#cfd3da;
+    --off-white:#f1f4fc;
+    --white:#ffffff;
+
+    /* roles */
+    --paper:var(--off-white);
+    --card:var(--white);
+    --tint:var(--white);
+    --line:var(--light-grey);
+    --muted:var(--light-blue);
+    --code-bg:var(--off-white);
+
+    /* type: the site's own system uses Larken (shown in Fraunces), Hanken Grotesk, Manrope */
+    --display:"Fraunces","Larken",Georgia,"Times New Roman",serif;
+    --body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+    --utility:"Manrope","Hanken Grotesk",Arial,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --site-display:var(--display);
+    --site-body:var(--body);
+    --site-utility:var(--utility);
+    --site-navy:var(--navy);
+    --sans:var(--body);
+  }
+
+  /* This page uses a single light look by design; there is no dark variant. */
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-inline:20px;
+  }
+  a{color:var(--brown)}
+  a:hover{color:var(--blue)}
+  h1,h2,h3,h4{font-family:var(--display);color:var(--navy);font-weight:500;letter-spacing:-.01em}
+  .wrap{max-width:880px;margin:0 auto}
+  .wide{max-width:960px;margin:0 auto}
+
+  /* top nav */
+  .topnav{
+    position:sticky;top:0;z-index:5;
+    background:color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .topnav-inner{
+    max-width:960px;margin:0 auto;
+    display:flex;align-items:center;gap:22px;
+    padding-block:14px;
+    flex-wrap:wrap;
+  }
+  .topnav .brand{display:inline-flex;align-items:center}
+  .topnav .brand img{height:34px;width:auto;display:block}
+  .topnav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;flex-wrap:wrap}
+  .topnav a{font-family:var(--utility);color:var(--navy);text-decoration:none;font-size:14px;font-weight:600}
+  .topnav a:hover{color:var(--blue)}
+
+  /* eyebrow / section rule: matches the Company's own document convention */
+  .rules{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .rules .ln{height:1px;background:var(--blue);flex:0 0 34px}
+  .rules .cap{font-family:var(--utility);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:700}
+
+  header.hero{padding-block:56px 40px}
+  header.hero p{color:var(--slate);max-width:62ch;margin:0;font-size:18px}
+  header.hero p.hero-subtitle{color:var(--navy);font-family:var(--display);font-size:22px;margin-bottom:14px}
+
+  section{
+    padding-block:48px;
+    border-top:1px solid var(--line);
+    /* Keep section headings clear of the sticky navigation after anchor jumps. */
+    scroll-margin-top:88px;
+  }
+  header.hero h1,section h2{font-size:34px;color:var(--brown);margin:0 0 8px;text-wrap:balance}
+  section > p.lede{color:var(--muted);max-width:62ch;margin:0 0 32px}
+
+  /* colour */
+  .swatch-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+    gap:18px;
+    margin-bottom:28px;
+  }
+  .swatch{
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+    background:var(--card);
+  }
+  .swatch .block{
+    display:block;height:96px;width:100%;border:0;padding:0;cursor:pointer;
+    position:relative;
+  }
+  .swatch .block:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+  .swatch .meta{padding:12px 14px 14px}
+  .swatch .nm{font-weight:600;font-size:14px;display:block;color:var(--navy)}
+  .swatch .sub{font-size:12px;color:var(--muted);display:block;margin-top:2px}
+  .swatch .hex{
+    font-family:var(--mono);font-size:13px;margin-top:8px;
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--code-bg);border:1px solid var(--line);
+    border-radius:6px;padding:4px 8px;
+    cursor:pointer;color:var(--ink);
+  }
+  .swatch .hex:hover{border-color:var(--blue);color:var(--blue)}
+  .swatch .hex svg{width:13px;height:13px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .swatch .hex.is-copied svg{display:none}
+  .swatch .block::after{
+    content:"";position:absolute;right:8px;top:8px;width:26px;height:26px;border-radius:6px;
+    background:rgba(255,255,255,.9) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1a1a' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='9' width='11' height='11' rx='2'/%3E%3Cpath d='M5 15V5a1 1 0 0 1 1-1h10'/%3E%3C/svg%3E") center/14px no-repeat;
+    opacity:0;transition:opacity .15s;box-shadow:0 1px 3px rgba(0,0,0,.2);
+  }
+  .swatch:hover .block::after,.swatch .block:focus-visible::after{opacity:1}
+  @media (prefers-reduced-motion:reduce){.swatch .block::after{transition:none}}
+  .swatch .hex .copied{color:var(--blue);font-family:var(--utility);font-weight:600;font-size:12px;display:none}
+  .swatch .hex.is-copied .copied{display:inline}
+  .swatch .hex.is-copied .code{display:none}
+
+  .usage-notes{
+    border:1px solid var(--line);border-radius:10px;background:var(--tint);
+    padding:18px 22px;font-size:15px;color:var(--ink);
+  }
+  .usage-notes ul{margin:8px 0 0;padding-left:20px}
+  .usage-notes li{margin-bottom:6px}
+  .usage-notes strong{color:var(--ink)}
+  .usage-notes code{font-family:var(--mono);font-size:13px;background:var(--code-bg);padding:1px 5px;border-radius:4px}
+
+  .group-heading{
+    font-family:var(--utility);font-size:13px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;
+    color:var(--muted);margin:0 0 14px;display:block;
+  }
+  .swatch-grid + .group-heading{margin-top:8px}
+  .flag-note{
+    border:1px solid var(--dark-brown);border-radius:10px;background:color-mix(in srgb, var(--dark-brown) 6%, var(--white));
+    padding:16px 20px;font-size:14px;color:var(--ink);margin-bottom:28px;
+  }
+  .flag-note strong{color:var(--dark-brown)}
+  .swatch .sub.mono{font-family:var(--mono)}
+
+  /* gradients */
+  .grad-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;margin-bottom:28px;
+  }
+  .grad{
+    border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);
+  }
+  .grad .band{height:110px}
+  .grad .meta{padding:12px 14px 14px}
+  .grad .nm{font-weight:600;font-size:14px;display:block;color:var(--navy)}
+  .grad .sub{font-size:12px;color:var(--muted);display:block;margin-top:2px}
+  .grad .stops{font-family:var(--mono);font-size:12px;color:var(--ink);margin-top:8px;display:block;line-height:1.5}
+
+  /* typography */
+  .specimen{
+    border:1px solid var(--line);border-radius:10px;background:var(--tint);
+    padding:26px 28px;margin-bottom:16px;
+  }
+  .specimen .disp{font-size:clamp(24px,4vw,32px);font-weight:500;margin:0 0 12px;text-wrap:balance}
+  .specimen img{display:block;max-width:100%;height:auto}
+  .specimen img.tight{max-width:720px}
+  .specimen .bodytext{font-size:16px;line-height:1.65;margin:0;max-width:65ch}
+  .specimen .label{
+    font-family:var(--mono);font-size:12px;color:var(--muted);
+    letter-spacing:.3px;margin-top:14px;display:block;
+  }
+  .specimen .btn-demo{
+    display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0;
+  }
+  .specimen .btn-demo span{
+    font-family:var(--site-utility);font-weight:400;font-size:16px;line-height:1.2;
+    padding:12px 24px;border-radius:999px;display:inline-block;
+  }
+  .type-group{margin-top:36px}
+  .type-group h3{font-size:26px;margin:0 0 6px}
+  .type-group > p{color:var(--slate);max-width:62ch;margin:0 0 18px}
+  .type-group .specimen:last-child{margin-bottom:0}
+  .type-details{margin-top:16px}
+  .type-details summary{cursor:pointer;color:var(--navy);font-family:var(--utility);font-size:14px;font-weight:700}
+  .type-details[open] summary{margin-bottom:16px}
+  .type-details .specimen:last-child{margin-bottom:0}
+  .type-field{margin-top:20px;max-width:330px}
+  .type-field .field-label{display:block;font-family:var(--site-utility);font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px}
+  .type-field .field-example{display:block;font-family:var(--site-utility);font-size:16px;color:var(--slate);border:1px solid var(--line);border-radius:6px;padding:10px 12px}
+  .stack-table{
+    width:100%;border-collapse:collapse;font-size:14px;margin-bottom:0;
+  }
+  .stack-table th,.stack-table td{
+    text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;
+  }
+  .stack-table th{font-family:var(--utility);font-size:12px;letter-spacing:.4px;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .stack-table tbody th{font-size:14px;letter-spacing:0;text-transform:none;color:var(--navy);font-weight:600}
+  .stack-table code{font-family:var(--mono);font-size:13px;background:var(--code-bg);padding:2px 6px;border-radius:4px;white-space:nowrap}
+  .table-scroll{overflow-x:auto;margin-bottom:16px}
+  .type-scale{border:1px solid var(--line);border-radius:10px;background:var(--tint);overflow:hidden}
+  .type-scale-row{display:grid;grid-template-columns:110px minmax(0,1fr);align-items:center;gap:18px;padding:12px 24px;border-top:1px solid var(--line)}
+  .type-scale-row:first-child{border-top:0}
+  .type-scale-meta{font-family:var(--mono);font-size:14px;color:var(--navy);font-weight:600}
+  .type-scale-meta small{display:block;font-family:var(--utility);font-size:12px;font-weight:500;color:var(--slate);line-height:1.3;margin-top:3px}
+  .type-scale-sample{display:block;line-height:1.05;white-space:nowrap;color:var(--navy)}
+  .type-scale-sample.heading{font-family:var(--site-display)}
+  .type-scale-sample.body{font-family:var(--site-body)}
+  .type-scale-sample.utility{font-family:var(--site-utility)}
+  @media (max-width:480px){
+    .type-scale-row{grid-template-columns:74px minmax(0,1fr);gap:10px;padding-inline:14px}
+  }
+  @media (max-width:640px){
+    .stack-table,.stack-table tbody,.stack-table tr,.stack-table th,.stack-table td{display:block;width:100%}
+    .stack-table thead{display:none}
+    .stack-table tbody tr{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:14px 16px;margin-bottom:10px}
+    .stack-table tbody th,.stack-table tbody td{border:0;padding:0}
+    .stack-table tbody td:last-child{margin-top:8px}
+    .stack-table code{white-space:normal;overflow-wrap:anywhere}
+  }
+
+  /* logo */
+  .logo-section{margin-bottom:44px}
+  .logo-section h3{font-size:24px;margin:0 0 4px}
+  .logo-section .tag{
+    display:inline-block;font-family:var(--utility);font-size:11px;
+    letter-spacing:.4px;text-transform:uppercase;color:var(--muted);
+    border:1px solid var(--line);border-radius:999px;padding:2px 9px;margin-bottom:10px;
+  }
+  .logo-section p.desc{color:var(--muted);max-width:62ch;margin:6px 0 20px}
+  .subhead{
+    font-family:var(--utility);font-size:13px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;
+    color:var(--muted);margin:0 0 14px;
+  }
+  .figure-row{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:28px;align-items:flex-start}
+  .crest-figure{
+    border:1px solid var(--line);border-radius:10px;background:var(--card);
+    padding:24px;flex:1 1 260px;max-width:340px;margin:0;
+  }
+  .crest-figure img{display:block;width:100%;height:auto;max-width:100%}
+  .crest-figure.diagram{padding:18px}
+  .crest-figure figcaption{
+    font-size:13px;color:var(--muted);margin-top:24px;padding-top:18px;
+    border-top:1px solid var(--line);text-align:center;
+  }
+  .logo-figure{
+    border:1px solid var(--line);border-radius:10px;background:var(--card);
+    padding:36px 32px;flex:1 1 300px;max-width:460px;margin:0;
+  }
+  .logo-figure.reversed{background:var(--navy);border-color:var(--navy)}
+  .logo-figure.hall-dark{background:#020b35;border-color:#020b35}
+  .logo-figure.hall-dark figcaption{color:#aed9e8}
+  .logo-figure.hall-dark .btn{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+  .logo-figure.hall-dark .btn:hover{background:#fff;color:#020b35}
+  .logo-figure.badge img{max-width:220px;margin:0 auto}
+  .logo-figure img{display:block;width:100%;height:auto;max-width:100%}
+  .logo-figure figcaption{
+    font-size:13px;color:var(--muted);margin-top:28px;padding-top:18px;
+    border-top:1px solid var(--line);text-align:center;
+  }
+  .logo-figure.reversed figcaption,.logo-figure.hall-dark figcaption{border-top-color:rgba(255,255,255,.32)}
+  .logo-figure.reversed figcaption{color:#cfd3da}
+  .logo-figure.reversed .btn{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+  .logo-figure.reversed .btn:hover{background:#fff;color:var(--navy)}
+  .asset-note{font-size:13px;color:var(--muted);margin:0 0 32px}
+  .download-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;justify-content:center}
+  .btn{
+    font-family:var(--utility);font-size:14px;font-weight:400;line-height:1.2;
+    color:var(--navy);background:var(--white);border:1px solid var(--light-grey);
+    border-radius:999px;padding:10px 20px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .btn:hover{background:var(--light-brown);border-color:var(--light-brown);color:var(--white)}
+  .rules-list{margin:0;padding-left:20px;max-width:62ch}
+  .rules-list li{margin-bottom:6px}
+
+  /* tone of voice */
+  .principle-grid{display:grid;gap:16px}
+  .principle{
+    border:1px solid var(--line);border-radius:10px;background:var(--tint);
+    padding:22px 26px;
+  }
+  .principle h3{color:var(--blue);font-size:22px;margin:0 0 12px}
+  .principle ul{margin:0;padding-left:20px}
+  .principle li{margin-bottom:6px;font-size:15px}
+
+  footer{
+    border-top:1px solid var(--line);
+    padding-block:36px 60px;
+    color:var(--slate);font-size:14px;
+  }
+  footer p{margin:4px 0}
+
+  @media (max-width:640px){
+    .topnav ul{gap:12px}
+    header.hero{padding-block:36px 28px}
+    section{padding-block:36px;scroll-margin-top:160px}
+  }
+</style>
+</head>
+<body id="top">
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a class="brand" href="#top" aria-label="The Stationers' Company: back to top"><img src="assets/logo-primary.svg" alt="The Stationers' Company" width="266" height="54"></a>
+    <ul>
+      <li><a href="#logo">Logo &amp; Marks</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#site-colour">Website Colours</a></li>
+      <li><a href="#colour">Legacy Colours</a></li>
+      <li><a href="#hall-logo">Hall Logo</a></li>
+      <li><a href="#hall-colour">Hall Colours</a></li>
+      <li><a href="#tone">Tone of Voice</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wide">
+  <header class="hero">
+    <h1>Brand guidelines (Working draft)</h1>
+    <p class="hero-subtitle">How we look, sound and present ourselves</p>
+    <p>This overview of our brand identity is designed to help you capture the Stationers’ look, feel and tone of voice in a consistent and professional way. We should aim to connect to our audience, be direct and hold attention. To achieve this our communications should be clear, professional and organised.</p>
+  </header>
+
+  <section id="logo">
+    <h2>01 · Logo &amp; marks</h2>
+    <p class="lede">Two marks are in current use; the primary logo for everyday communications, and the heritage crest for occasional use.</p>
+
+    <div class="logo-section">
+      <span class="tag">Everyday use</span>
+      <h3>Primary logo</h3>
+      <p class="desc">The eagle device in Light brown (#A89571) with the wordmark in Dark blue (#0F2546), set in Larken.</p>
+
+      <div class="figure-row">
+        <figure class="logo-figure">
+          <img src="assets/logo-primary.svg" alt="The Stationers' Company primary logo: a bronze eagle standing on a book beside the wordmark in navy" width="266" height="54">
+          <figcaption>Positive: on white or Off-white</figcaption>
+          <div class="download-row">
+            <a class="btn" href="assets/logo-primary.svg" target="_blank" rel="noopener">Open SVG ↗</a>
+            <a class="btn" href="assets/logo-primary.png" target="_blank" rel="noopener">Open PNG ↗</a>
+          </div>
+        </figure>
+        <figure class="logo-figure reversed">
+          <img src="assets/logo-primary-reversed.svg" alt="The Stationers' Company primary logo reversed: bronze eagle with a white wordmark on dark blue" width="266" height="54">
+          <figcaption>Reversed: white wordmark on Dark blue</figcaption>
+          <div class="download-row">
+            <a class="btn" href="assets/logo-primary-reversed.svg" target="_blank" rel="noopener">Open SVG ↗</a>
+            <a class="btn" href="assets/logo-primary-reversed.png" target="_blank" rel="noopener">Open PNG ↗</a>
+          </div>
+        </figure>
+      </div>
+    </div>
+
+    <div class="logo-section">
+      <h3>Crest logo</h3>
+      <p class="desc">The historic crest and wordmark lock-up. Used occasionally for heritage-themed communications; superseded by the primary logo for everyday use.</p>
+
+      <h4 class="subhead">Lock-up variants</h4>
+      <div class="figure-row">
+        <figure class="crest-figure">
+          <img src="assets/crest.svg" alt="The Stationers' Company heritage crest with wordmark set beside it" width="1403" height="409">
+          <figcaption>Horizontal: crest beside wordmark</figcaption>
+          <div class="download-row">
+            <a class="btn" href="assets/crest.svg" target="_blank" rel="noopener">Open SVG ↗</a>
+            <a class="btn" href="assets/crest.png" target="_blank" rel="noopener">Open PNG ↗</a>
+          </div>
+        </figure>
+        <figure class="crest-figure">
+          <img src="assets/crest-vertical.svg" alt="The Stationers' Company heritage crest with wordmark stacked below it" width="745" height="828">
+          <figcaption>Vertical: wordmark stacked below</figcaption>
+          <div class="download-row">
+            <a class="btn" href="assets/crest-vertical.svg" target="_blank" rel="noopener">Open SVG ↗</a>
+            <a class="btn" href="assets/crest-vertical.png" target="_blank" rel="noopener">Open PNG ↗</a>
+          </div>
+        </figure>
+        <figure class="crest-figure">
+          <img src="assets/crest-only.svg" alt="The Stationers' Company heritage crest on its own, without any wordmark" width="150" height="121">
+          <figcaption>Crest only: no wordmark</figcaption>
+          <div class="download-row">
+            <a class="btn" href="assets/crest-only.svg" target="_blank" rel="noopener">Open SVG ↗</a>
+            <a class="btn" href="assets/crest-only.png" target="_blank" rel="noopener">Open PNG ↗</a>
+          </div>
+        </figure>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <section id="typography">
+    <h2>02 · Typography</h2>
+    <p class="lede">Three typefaces, each with a clear role.</p>
+
+    <h3 class="subhead">Font stacks</h3>
+    <div class="table-scroll">
+    <table class="stack-table">
+      <thead><tr><th scope="col">Role</th><th scope="col">Typeface</th><th scope="col">Stack with fallbacks</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Headings</th><td>Larken</td><td><code>"larken", "Fraunces", Georgia, serif</code></td></tr>
+        <tr><th scope="row">Body copy</th><td>Hanken Grotesk</td><td><code>"hanken-grotesk", "Hanken Grotesk", Arial, sans-serif</code></td></tr>
+        <tr><th scope="row">Buttons &amp; labels</th><td>Manrope</td><td><code>"Manrope", "Hanken Grotesk", Arial, sans-serif</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="asset-note">This guide uses Fraunces for live headings because Larken is unavailable here. The Larken specimen below shows the intended face.</p>
+
+    <div class="type-group">
+      <h3>Headings · Larken</h3>
+      <p>Use Larken for display text and headings. Keep the number of heading levels limited so the hierarchy stays clear.</p>
+      <div class="specimen">
+        <img src="assets/type-larken-display.png" alt="Larken Regular specimen reading 'Clear, professional, organised'" width="2808" height="435">
+        <span class="label">Larken Regular · heading specimen</span>
+      </div>
+      <details class="type-details">
+        <summary>View Larken weights and character set</summary>
+        <div class="specimen">
+          <img src="assets/type-larken-weights.png" alt="The phrase 'Clear, professional, organised' shown in Larken Regular, Regular Italic, Bold and Bold Italic" width="1907" height="909" class="tight" loading="lazy">
+          <span class="label">Regular · Regular Italic · Bold · Bold Italic</span>
+        </div>
+        <div class="specimen">
+          <img src="assets/type-larken-alphabet.png" alt="Larken Regular character set: capitals, lower case, numerals and punctuation" width="2102" height="648" class="tight" loading="lazy">
+          <span class="label">Larken Regular · character set</span>
+        </div>
+      </details>
+    </div>
+
+    <div class="type-group">
+      <h3>Body copy · Hanken Grotesk</h3>
+      <p>Use Hanken Grotesk for paragraphs and longer reading text.</p>
+      <div class="specimen">
+        <p class="bodytext">The Stationers' Company brings people across the communications and content industries together. <strong>Clear information</strong> helps our readers find what matters, while <em>careful emphasis</em> adds variety without interrupting the flow.</p>
+        <span class="label">Hanken Grotesk · regular, bold and italic · 16px example</span>
+      </div>
+    </div>
+
+    <div class="type-group">
+      <h3>Buttons &amp; labels · Manrope</h3>
+      <p>Use Manrope for actions, form labels and short interface text.</p>
+      <div class="specimen">
+        <p class="btn-demo">
+          <span style="background:#a89571;color:#fff">Become a member</span>
+          <span style="background:#cfd3da;color:#0f2546">Find out more</span>
+          <span style="background:#fff;color:#0f2546;border:1px solid #cfd3da">Get in touch</span>
+        </p>
+        <div class="type-field">
+          <span class="field-label">Email address</span>
+          <span class="field-example">name@example.com</span>
+        </div>
+        <span class="label">Manrope · buttons and form labels</span>
+      </div>
+    </div>
+
+    <div class="type-group">
+      <h3>Type scale</h3>
+      <p>Compare the sizes used across the website.</p>
+      <div class="type-scale" aria-label="Visual type scale">
+        <div class="type-scale-row"><span class="type-scale-meta">120px<small>Display</small></span><span class="type-scale-sample heading" style="font-size:120px" aria-hidden="true">Aa</span></div>
+        <div class="type-scale-row"><span class="type-scale-meta">110px<small>Display</small></span><span class="type-scale-sample heading" style="font-size:110px" aria-hidden="true">Aa</span></div>
+        <div class="type-scale-row"><span class="type-scale-meta">60px<small>Heading</small></span><span class="type-scale-sample heading" style="font-size:60px" aria-hidden="true">Aa</span></div>
+        <div class="type-scale-row"><span class="type-scale-meta">40px<small>Heading</small></span><span class="type-scale-sample heading" style="font-size:40px" aria-hidden="true">Aa</span></div>
+        <div class="type-scale-row"><span class="type-scale-meta">30px<small>Heading</small></span><span class="type-scale-sample heading" style="font-size:30px" aria-hidden="true">Aa</span></div>
+        <div class="type-scale-row"><span class="type-scale-meta">24px<small>Heading</small></span><span class="type-scale-sample heading" style="font-size:24px" aria-hidden="true">Aa</span></div>
+        <div class="type-scale-row"><span class="type-scale-meta">20px<small>Body</small></span><span class="type-scale-sample body" style="font-size:20px" aria-hidden="true">Aa</span></div>
+        <div class="type-scale-row"><span class="type-scale-meta">18px<small>Body</small></span><span class="type-scale-sample body" style="font-size:18px" aria-hidden="true">Aa</span></div>
+        <div class="type-scale-row"><span class="type-scale-meta">16px<small>Body</small></span><span class="type-scale-sample body" style="font-size:16px" aria-hidden="true">Aa</span></div>
+        <div class="type-scale-row"><span class="type-scale-meta">14px<small>Labels</small></span><span class="type-scale-sample utility" style="font-size:14px" aria-hidden="true">Aa</span></div>
+      </div>
+      <p class="asset-note">These are desktop sizes; larger text steps down on smaller screens.</p>
+    </div>
+
+    <div class="usage-notes">
+      <strong>Usage notes</strong>
+      <ul>
+        <li>All text should be ranged-left and unhyphenated.</li>
+        <li>Use the type scale to preserve a clear difference between headings, body text and labels.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="site-colour">
+    <h2>03 · Website colours</h2>
+    <p class="lede">Click any swatch or hex code to copy it.</p>
+
+
+    <span class="group-heading">Blues</span>
+    <div class="swatch-grid">
+      <figure class="swatch">
+        <button class="block" style="background:#2962e7" data-hex="#2962E7" aria-label="Copy Blue hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Blue</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#2962E7</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#0f2546" data-hex="#0F2546" aria-label="Copy Dark blue hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Dark blue</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#0F2546</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#0a1b3c" data-hex="#0A1B3C" aria-label="Copy Dark blue 2 hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Dark blue 2</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#0A1B3C</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#3b5479" data-hex="#3B5479" aria-label="Copy Slate hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Slate</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#3B5479</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#75869e" data-hex="#75869E" aria-label="Copy Light blue hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Light blue</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#75869E</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#a7c8fa" data-hex="#A7C8FA" aria-label="Copy Light blue 2 hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Light blue 2</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#A7C8FA</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <span class="group-heading">Yellows</span>
+    <div class="swatch-grid">
+      <figure class="swatch">
+        <button class="block" style="background:#f7d252" data-hex="#F7D252" aria-label="Copy Yellow hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Yellow</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#F7D252</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#e9bb2b" data-hex="#E9BB2B" aria-label="Copy Dark yellow hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Dark yellow</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#E9BB2B</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <span class="group-heading">Browns &amp; bronzes</span>
+    <div class="swatch-grid">
+      <figure class="swatch">
+        <button class="block" style="background:#a89571" data-hex="#A89571" aria-label="Copy Light brown hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Light brown</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#A89571</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#9f7d58" data-hex="#9F7D58" aria-label="Copy Brown hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Brown (bronze)</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#9F7D58</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#641f17" data-hex="#641F17" aria-label="Copy Dark brown hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Dark brown</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#641F17</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#686358" data-hex="#686358" aria-label="Copy Warm grey hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Warm grey</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#686358</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <span class="group-heading">Neutrals</span>
+    <div class="swatch-grid">
+      <figure class="swatch">
+        <button class="block" style="background:#141414" data-hex="#141414" aria-label="Copy Near-black ink hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Near-black ink</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#141414</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#a1a4a9" data-hex="#A1A4A9" aria-label="Copy Grey hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Grey</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#A1A4A9</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#cfd3da" data-hex="#CFD3DA" aria-label="Copy Light grey hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Light grey</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#CFD3DA</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#f1f4fc;border-bottom:1px solid var(--line)" data-hex="#F1F4FC" aria-label="Copy Off-white hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Off-white</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#F1F4FC</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#ffffff;border-bottom:1px solid var(--line)" data-hex="#FFFFFF" aria-label="Copy White hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">White</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#FFFFFF</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <span class="group-heading">Gradients</span>
+    <div class="grad-grid">
+      <figure class="grad">
+        <div class="band" style="background:linear-gradient(180deg,#3067e8 0%,#9fb9f4 100%)"></div>
+        <figcaption class="meta">
+          <span class="nm">Hero · light blue</span>
+          <span class="stops">#3067E8 → #9FB9F4</span>
+        </figcaption>
+      </figure>
+      <figure class="grad">
+        <div class="band" style="background:linear-gradient(180deg,#0f2546 0%,#193c82 100%)"></div>
+        <figcaption class="meta">
+          <span class="nm">Hero · dark blue</span>
+          <span class="stops">#0F2546 → #193C82</span>
+        </figcaption>
+      </figure>
+      <figure class="grad">
+        <div class="band" style="background:linear-gradient(180deg,#641f17 0%,#a04337 100%)"></div>
+        <figcaption class="meta">
+          <span class="nm">Hero · brown</span>
+          <span class="stops">#641F17 → #A04337</span>
+        </figcaption>
+      </figure>
+      <figure class="grad">
+        <div class="band" style="background:linear-gradient(330deg,#0f2546 7.65%,#2962e7 92.35%)"></div>
+        <figcaption class="meta">
+          <span class="nm">Blue block</span>
+          <span class="stops">#0F2546 → #2962E7</span>
+        </figcaption>
+      </figure>
+      <figure class="grad">
+        <div class="band" style="background:radial-gradient(120% 100% at 50% 0%,#76c8fb 0%,#2962e7 70%)"></div>
+        <figcaption class="meta">
+          <span class="nm">Home radial</span>
+          <span class="stops">#2962E7 → #76C8FB</span>
+        </figcaption>
+      </figure>
+      <figure class="grad">
+        <div class="band" style="background:radial-gradient(120% 90% at 50% 20%,#641f17 45%,#c5584b 100%)"></div>
+        <figcaption class="meta">
+          <span class="nm">Brown radial</span>
+          <span class="stops">#641F17 → #C5584B</span>
+        </figcaption>
+      </figure>
+      <figure class="grad">
+        <div class="band" style="background:linear-gradient(180deg,#f1f4fc 0%,#8aa9f2 100%)"></div>
+        <figcaption class="meta">
+          <span class="nm">Footer</span>
+          <span class="stops">#F1F4FC → #8AA9F2</span>
+        </figcaption>
+      </figure>
+    </div>
+
+  </section>
+
+  <section id="colour">
+    <h2>04 · Legacy colours</h2>
+    <p class="lede">The Company palette as documented in the 2021 brand identity overview. Click any swatch or hex code to copy it.</p>
+
+    <div class="swatch-grid">
+      <figure class="swatch">
+        <button class="block" style="background:#00569d" data-hex="#00569D" aria-label="Copy Primary blue hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Primary blue</span>
+          <span class="sub">Pantone 293c</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#00569D</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#eebe08" data-hex="#EEBE08" aria-label="Copy Yellow hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Yellow</span>
+          <span class="sub">Pantone 130c</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#EEBE08</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#c85143" data-hex="#C85143" aria-label="Copy Red hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Red</span>
+          <span class="sub">Pantone 032</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#C85143</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#008977" data-hex="#008977" aria-label="Copy Green hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Green</span>
+          <span class="sub">Pantone 335c</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#008977</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="usage-notes">
+      <strong>Usage notes</strong>
+      <ul>
+        <li>Use blue for headings or large solid panels.</li>
+        <li>Use black for all body text (except headings) on white or light backgrounds.</li>
+        <li>Type can be white on 40%-or-darker tinted panels, except yellow.</li>
+        <li>Avoid setting text in yellow on a white or light background.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="hall-logo">
+    <h2>05 · Hall logo</h2>
+    <p class="lede">Stationers' Hall carries its own mark: an illustration of the Hall's façade in the Hall blues on a cream ground, beside STATIONERS' HALL set in Larken capitals.</p>
+
+    <div class="figure-row">
+      <figure class="logo-figure">
+        <img src="assets/hall-logo.svg" alt="Stationers' Hall logo: an illustration of the Hall in blues and cream beside the words Stationers' Hall in dark navy capitals" width="555" height="135">
+        <figcaption>Positive: wordmark in Dark navy #0D1334</figcaption>
+        <div class="download-row">
+          <a class="btn" href="assets/hall-logo.svg" target="_blank" rel="noopener">Open SVG ↗</a>
+          <a class="btn" href="assets/hall-logo.png" target="_blank" rel="noopener">Open PNG ↗</a>
+        </div>
+      </figure>
+      <figure class="logo-figure hall-dark">
+        <img src="assets/hall-logo-reversed.svg" alt="Stationers' Hall logo reversed: the illustration beside the words Stationers' Hall in off-white capitals on midnight navy" width="555" height="135">
+        <figcaption>Reversed: wordmark in Off-white #ECEDDE, as the site uses on dark grounds</figcaption>
+        <div class="download-row">
+          <a class="btn" href="assets/hall-logo-reversed.svg" target="_blank" rel="noopener">Open SVG ↗</a>
+          <a class="btn" href="assets/hall-logo-reversed.png" target="_blank" rel="noopener">Open PNG ↗</a>
+        </div>
+      </figure>
+      <figure class="logo-figure badge">
+        <img src="assets/hall-badge.svg" alt="Stationers' Hall badge: the Hall illustration on its own" width="600" height="600">
+        <figcaption>Badge: the illustration alone, used as a site graphic</figcaption>
+        <div class="download-row">
+          <a class="btn" href="assets/hall-badge.svg" target="_blank" rel="noopener">Open SVG ↗</a>
+          <a class="btn" href="assets/hall-badge.png" target="_blank" rel="noopener">Open PNG ↗</a>
+        </div>
+      </figure>
+    </div>
+    <p class="asset-note">Logo colours: Sky blue #A1DBE9, Bright cyan #0ABFD8, Deep teal #034750, Cream #F1EEE7, Dark navy #0D1334. The illustration keeps these fixed; only the wordmark switches between navy and off-white.</p>
+  </section>
+
+  <section id="hall-colour">
+    <h2>06 · Hall colours</h2>
+    <p class="lede">Stationers' Hall has its own palette of navy and teal blues with cream, bronze and burgundy accents. It gives Hall communications and the venue website a distinct identity from the Company. Click any swatch or hex code to copy it.</p>
+
+    <span class="group-heading">Blues &amp; teals</span>
+    <div class="swatch-grid">
+      <figure class="swatch">
+        <button class="block" style="background:#020b35" data-hex="#020B35" aria-label="Copy Midnight navy hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Midnight navy</span>
+          <span class="sub"><span class="mono">midnight-navy</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#020B35</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#0d1334" data-hex="#0D1334" aria-label="Copy Dark navy hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Dark navy</span>
+          <span class="sub"><span class="mono">logo wordmark</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#0D1334</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#004066" data-hex="#004066" aria-label="Copy Deep ocean hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Deep ocean</span>
+          <span class="sub"><span class="mono">deep-ocean</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#004066</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#034750" data-hex="#034750" aria-label="Copy Deep teal hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Deep teal</span>
+          <span class="sub"><span class="mono">logo</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#034750</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#00a1ff" data-hex="#00A1FF" aria-label="Copy Electric blue hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Electric blue</span>
+          <span class="sub"><span class="mono">electric-blue</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#00A1FF</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#0abfd8" data-hex="#0ABFD8" aria-label="Copy Bright cyan hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Bright cyan</span>
+          <span class="sub"><span class="mono">logo</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#0ABFD8</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#6fc6e9" data-hex="#6FC6E9" aria-label="Copy Aqua sky hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Aqua sky</span>
+          <span class="sub"><span class="mono">aqua-sky</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#6FC6E9</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#aed9e8" data-hex="#AED9E8" aria-label="Copy Powder blue hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Powder blue</span>
+          <span class="sub"><span class="mono">powder-blue</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#AED9E8</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#a1dbe9" data-hex="#A1DBE9" aria-label="Copy Sky blue hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Sky blue</span>
+          <span class="sub"><span class="mono">logo</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#A1DBE9</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#7490c2" data-hex="#7490C2" aria-label="Copy Cornflower hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Cornflower</span>
+          <span class="sub"><span class="mono">cornflower</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#7490C2</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <span class="group-heading">Neutrals</span>
+    <div class="swatch-grid">
+      <figure class="swatch">
+        <button class="block" style="background:#f1eee7;border-bottom:1px solid var(--line)" data-hex="#F1EEE7" aria-label="Copy Cream hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Cream</span>
+          <span class="sub"><span class="mono">logo</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#F1EEE7</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#f0ebde;border-bottom:1px solid var(--line)" data-hex="#F0EBDE" aria-label="Copy Ivory hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Ivory</span>
+          <span class="sub"><span class="mono">ivory</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#F0EBDE</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#ecedde;border-bottom:1px solid var(--line)" data-hex="#ECEDDE" aria-label="Copy Off-white hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Off-white</span>
+          <span class="sub"><span class="mono">off-white</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#ECEDDE</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#a1a4a9" data-hex="#A1A4A9" aria-label="Copy Steel grey hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Steel grey</span>
+          <span class="sub"><span class="mono">steel-grey</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#A1A4A9</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#141414" data-hex="#141414" aria-label="Copy Near-black ink hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Near-black ink</span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#141414</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#ffffff;border-bottom:1px solid var(--line)" data-hex="#FFFFFF" aria-label="Copy White hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">White</span>
+          <span class="sub"><span class="mono">white</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#FFFFFF</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <span class="group-heading">Warm accents</span>
+    <div class="swatch-grid">
+      <figure class="swatch">
+        <button class="block" style="background:#9f7d58" data-hex="#9F7D58" aria-label="Copy Bronze hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Bronze</span>
+          <span class="sub"><span class="mono">bronze</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#9F7D58</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#927760" data-hex="#927760" aria-label="Copy Taupe hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Taupe</span>
+          <span class="sub"><span class="mono">taupe</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#927760</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#cca665" data-hex="#CCA665" aria-label="Copy Warm gold hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Warm gold</span>
+          <span class="sub"><span class="mono">warm-gold</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#CCA665</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#e5cfa8" data-hex="#E5CFA8" aria-label="Copy Champagne hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Champagne</span>
+          <span class="sub"><span class="mono">champagne</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#E5CFA8</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#932b39" data-hex="#932B39" aria-label="Copy Burgundy hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Burgundy</span>
+          <span class="sub"><span class="mono">burgundy</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#932B39</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#f59c25" data-hex="#F59C25" aria-label="Copy Amber hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Amber</span>
+          <span class="sub"><span class="mono">amber</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#F59C25</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#fcae18" data-hex="#FCAE18" aria-label="Copy Tangerine hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Tangerine</span>
+          <span class="sub"><span class="mono">tangerine</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#FCAE18</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#5c745e" data-hex="#5C745E" aria-label="Copy Forest green hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Forest green</span>
+          <span class="sub"><span class="mono">forest-green</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#5C745E</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+      <figure class="swatch">
+        <button class="block" style="background:#e0feca;border-bottom:1px solid var(--line)" data-hex="#E0FECA" aria-label="Copy Mint cream hex code"></button>
+        <figcaption class="meta">
+          <span class="nm">Mint cream</span>
+          <span class="sub"><span class="mono">mint-cream</span></span>
+          <span class="hex" data-copy-target role="button" tabindex="0" title="Copy hex code"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span class="code">#E0FECA</span><span class="copied">Copied ✓</span></span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="tone">
+    <h2>07 · Tone of voice</h2>
+    <p class="lede">Our tone should encourage the audience to engage with the content and the brand, to learn more about the Company, and start building a loyal, lasting relationship with us. This comes through on our website, social media and in any other written communication.</p>
+
+    <div class="principle-grid">
+      <div class="principle">
+        <h3>Be inclusive</h3>
+        <ul>
+          <li>"Our members" instead of "members"</li>
+          <li>"Our Company" instead of "the Company"</li>
+          <li>"We" and "us" instead of "staff"</li>
+          <li>"Our network" instead of "The network"</li>
+        </ul>
+      </div>
+      <div class="principle">
+        <h3>Use an active voice</h3>
+        <ul>
+          <li>"Be part of . . ."</li>
+          <li>"In our community . . ."</li>
+          <li>"Socialise with/meet fellow Stationers at . . ."</li>
+          <li>"Together we can . . ."</li>
+        </ul>
+      </div>
+      <div class="principle">
+        <h3>Make it personal</h3>
+        <ul>
+          <li>"Come and join us", "meet us", instead of "apply" or "sign up"</li>
+          <li>"Get in touch", instead of "call"</li>
+          <li>"Join us", instead of "You are invited"</li>
+          <li>"Our family of 1000 members"</li>
+        </ul>
+      </div>
+      <div class="principle">
+        <h3>Connect to the outside world</h3>
+        <ul>
+          <li>"A cosmopolitan hub for major industries"</li>
+          <li>"Excellent transport links to all that London offers"</li>
+          <li>"Where motivated people from around the UK and beyond come together"</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wide">
+    <p>This guide covers the core Company identity (logo, typography, colour and tone of voice) alongside the Stationers' Hall sub-brand. This page is set in the website's own type system and palette: Larken (shown in Fraunces where the licensed face is unavailable), Hanken Grotesk and Manrope on Blue, Dark blue, Light brown and Off-white.</p>
+    <p>For official artwork files or questions, contact communications@stationers.org.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.swatch .block').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      copyHex(btn.dataset.hex, btn.closest('.swatch').querySelector('.hex'));
+    });
+  });
+  document.querySelectorAll('.swatch .hex').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      copyHex(chip.querySelector('.code').textContent, chip);
+    });
+    chip.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chip.click(); }
+    });
+  });
+
+  function copyHex(hex, chipEl) {
+    var done = function () {
+      if (!chipEl) return;
+      chipEl.classList.add('is-copied');
+      setTimeout(function () { chipEl.classList.remove('is-copied'); }, 1400);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(hex).then(done).catch(done);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = hex;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+  }
+</script>
+</body>
+</html>
